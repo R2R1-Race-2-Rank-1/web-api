@@ -56,7 +56,7 @@ func envConf() Conf {
 	return Conf{
 		DatabaseType:           getEnv("DB_SCHEME", "mysql"),
 		DSN:                    getEnv("DSN", getEnv("DB_USER", "root")+":"+getEnv("DB_PASS", "osu")+"@tcp("+getEnv("DB_HOST", "db")+":3306)/"+getEnv("DB_NAME", "ripple")),
-		ListenTo:               getEnv("APP_HOST", ":40001"),
+		ListenTo:               ":80",
 		Unix:                   getEnvBool("UNIX", false),
 		SentryDSN:              getEnv("SENTRY_DSN", ""),
 		HanayoKey:              getEnv("APP_HANAYO_KEY", "APISECRETVALUE"),
